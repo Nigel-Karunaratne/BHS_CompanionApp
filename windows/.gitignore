@@ -1,3 +1,6 @@
+# File from https://github.com/flutter/samples/blob/master/testing_app/windows/.gitignore
+
+# Ignoring Ephemeral means the builds of the app won't be uploaded. For this project, Windows builds should only be used for easy UI testing. 
 flutter/ephemeral/
 
 # Visual Studio user-specific files.
