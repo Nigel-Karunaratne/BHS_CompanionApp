@@ -1,7 +1,22 @@
+// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
+
+import 'package:provider/provider.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+
+import 'package:bhs__companion__app/views/schedview.dart';
+import 'package:bhs__companion__app/views/mapview.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        
+      ],
+      child: MyApp(),
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,12 +30,28 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("App"),
-        ),
-        body: const SizedBox(),
-      ),
+      initialRoute: "/",
+      routes: {
+        "/map": (context) => MapView(),
+        "/sched": (context) => ScheduleView()
+      },
+      home: MapView(),
+    );
+  }
+}
+
+class AppBase extends StatefulWidget {
+  const AppBase({ Key? key }) : super(key: key);
+
+  @override
+  State<AppBase> createState() => _AppBaseState();
+}
+
+class _AppBaseState extends State<AppBase> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
     );
   }
 }
