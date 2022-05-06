@@ -39,19 +39,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-class AppBase extends StatefulWidget {
-  const AppBase({ Key? key }) : super(key: key);
-
-  @override
-  State<AppBase> createState() => _AppBaseState();
-}
-
-class _AppBaseState extends State<AppBase> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      
-    );
-  }
-}
