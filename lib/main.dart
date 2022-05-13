@@ -1,3 +1,4 @@
+//! Only here for development purposes: remove when buildng release app
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
@@ -5,8 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-import 'package:bhs__companion__app/views/schedview.dart';
-import 'package:bhs__companion__app/views/mapview.dart';
+import 'package:bhs__companion__app/views/views_all.dart';
 
 void main() {
   runApp(
@@ -14,26 +14,28 @@ void main() {
       providers: [
         
       ],
-      child: MyApp(),
+      child: MainApp(),
     )
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MainApp extends StatelessWidget {
+  const MainApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'MaterialApp/Title',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+
       initialRoute: "/",
       routes: {
         "/map": (context) => MapView(),
-        "/sched": (context) => ScheduleView()
+        "/sched": (context) => ScheduleView(),
+        "/helpful": (context) => HelpfulLinksView(),
+        "/qr": (context) => QRScannerView(),
       },
       home: MapView(),
     );
