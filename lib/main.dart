@@ -35,14 +35,18 @@ class MainApp extends StatelessWidget {
       // home: MapView(),
 
     onGenerateRoute: (settings) {
-      if (settings.name == '/map') 
+      if (settings.name == '/map') {
         return PageRouteBuilder(pageBuilder: (_, __, ___) => MapView(), transitionDuration: Duration.zero, reverseTransitionDuration: Duration.zero);
-      if (settings.name == '/sched') 
+      }
+      if (settings.name == '/sched') {
         return PageRouteBuilder(pageBuilder: (_, __, ___) => ScheduleView(), transitionDuration: Duration.zero, reverseTransitionDuration: Duration.zero);
-      if (settings.name == '/helpful') 
+      }
+      if (settings.name == '/helpful') {
         return PageRouteBuilder(pageBuilder: (_, __, ___) => HelpfulLinksView(), transitionDuration: Duration.zero, reverseTransitionDuration: Duration.zero);
-      if (settings.name == '/qr') 
+      }
+      if (settings.name == '/qr') {
         return PageRouteBuilder(pageBuilder: (_, __, ___) => QRScannerView(), transitionDuration: Duration.zero, reverseTransitionDuration: Duration.zero);
+      }
      return null;
     },
 
