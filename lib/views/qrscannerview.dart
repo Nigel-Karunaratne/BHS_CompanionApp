@@ -15,7 +15,7 @@ class _QRScannerViewState extends State<QRScannerView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Schedule Page"),
+        title: Text("QR Scanner Page"),
       ),
       body: Container(
         

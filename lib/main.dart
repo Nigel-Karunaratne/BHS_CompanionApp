@@ -10,12 +10,7 @@ import 'package:bhs__companion__app/views/views_all.dart';
 
 void main() {
   runApp(
-    MultiProvider(
-      providers: [
-        
-      ],
-      child: MainApp(),
-    )
+    MainApp()
   );
 }
 
@@ -27,17 +22,30 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: 'MaterialApp/Title',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
 
-      initialRoute: "/",
+      initialRoute: "/map",
       routes: {
         "/map": (context) => MapView(),
         "/sched": (context) => ScheduleView(),
         "/helpful": (context) => HelpfulLinksView(),
         "/qr": (context) => QRScannerView(),
       },
-      home: MapView(),
+      // home: MapView(),
+
+    onGenerateRoute: (settings) {
+      if (settings.name == '/map') 
+        return PageRouteBuilder(pageBuilder: (_, __, ___) => MapView(), transitionDuration: Duration.zero, reverseTransitionDuration: Duration.zero);
+      if (settings.name == '/sched') 
+        return PageRouteBuilder(pageBuilder: (_, __, ___) => ScheduleView(), transitionDuration: Duration.zero, reverseTransitionDuration: Duration.zero);
+      if (settings.name == '/helpful') 
+        return PageRouteBuilder(pageBuilder: (_, __, ___) => HelpfulLinksView(), transitionDuration: Duration.zero, reverseTransitionDuration: Duration.zero);
+      if (settings.name == '/qr') 
+        return PageRouteBuilder(pageBuilder: (_, __, ___) => QRScannerView(), transitionDuration: Duration.zero, reverseTransitionDuration: Duration.zero);
+     return null;
+    },
+
     );
   }
 }

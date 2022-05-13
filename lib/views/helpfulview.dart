@@ -15,7 +15,7 @@ class _HelpfulLinksState extends State<HelpfulLinksView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Schedule Page"),
+        title: Text("Helpful Links Page"),
       ),
       body: Container(
         
