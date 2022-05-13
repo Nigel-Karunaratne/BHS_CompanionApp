@@ -33,19 +33,19 @@ class _MapViewState extends State<MapView> {
 
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.location_on, color: Colors.grey[50],),
+            icon: Icon(Icons.location_on,),
             label: "Map"
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.qr_code_scanner, color: Colors.grey[50],),
+            icon: Icon(Icons.qr_code_scanner,),
             label: "QR Scanner"
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.help_center, color: Colors.grey[50],),
+            icon: Icon(Icons.help_center,),
             label: "Helpful Links"
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.schedule, color: Colors.grey[50],),
+            icon: Icon(Icons.schedule,),
             label: "Schedule"
           ),
         ],
