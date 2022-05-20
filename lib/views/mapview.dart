@@ -58,6 +58,8 @@ class _MapViewState extends State<MapView> {
       ),
       appBar: AppBar(
         title: Center(child: Text("BHS School Map")),
+        backgroundColor: Colors.red[800],
+        elevation: 0,
         actions: [
           IconButton(
             icon: Icon(Icons.search),
@@ -75,35 +77,54 @@ class _MapViewState extends State<MapView> {
         type: BottomNavigationBarType.fixed,
         elevation: 0.0,
         currentIndex: 0,
-
-        backgroundColor: Colors.red,
+      
+        backgroundColor: Colors.red[800],
         selectedItemColor: Colors.grey[50],
         unselectedItemColor: Colors.grey[500],
-        selectedIconTheme: IconThemeData(color: Colors.redAccent),
+        selectedIconTheme: IconThemeData(color: Colors.white),
         unselectedIconTheme: IconThemeData(color: Colors.grey[50]),
 
+        selectedFontSize: 0,
+        unselectedFontSize: 0,
+      
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.location_on,),
+            icon: Image.asset("assets/icons/bn_map.png", scale: 3,),
             label: "Map"
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.qr_code_scanner,),
+            icon: Image.asset("assets/icons/bn_camera.png", scale: 3,),
             label: "QR Scanner"
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.help_center,),
+            icon: Image.asset("assets/icons/bn_questionmark.png", scale: 3,),
             label: "Helpful Links"
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.schedule,),
+            icon: Image.asset("assets/icons/bn_3dots.png", scale: 3,),
             label: "Schedule"
           ),
         ],
-
+      
         onTap: (index) {
           //TODO: Abtract this into a provider?
-          Navigator.of(context).pushReplacementNamed("/qr");
+          switch (index) {
+            case 0:
+              Navigator.of(context).pushReplacementNamed("/map");
+              break;
+            case 1:
+              Navigator.of(context).pushReplacementNamed("/sched");
+              break;
+            case 2:
+              Navigator.of(context).pushReplacementNamed("/helpful");
+              break;
+            case 3:
+              Navigator.of(context).pushReplacementNamed("/qr");
+              break;
+          }
         },
       ),
     );
