@@ -8,8 +8,9 @@ class MapButton extends StatefulWidget {
   MapObjectData data = MapObjectData("null");
   double top = 0;
   double left = 0;
+  Color? iconColor;
 
-  MapButton({Key? key, required this.data, this.top = 0, this.left = 0}) : super(key: key); 
+  MapButton({Key? key, required this.data, this.top = 0, this.left = 0, this.iconColor}) : super(key: key); 
 
   @override
   State<MapButton> createState() => _MapButtonState();
@@ -21,7 +22,7 @@ class _MapButtonState extends State<MapButton> {
     return Positioned(
       child: IconButton(
         padding: EdgeInsets.zero,
-        icon: Icon(Icons.place, color: Colors.red,),
+        icon: Icon(Icons.place, color: widget.iconColor??Colors.red,),
         onPressed: () {
           Provider.of<MapProvider>(context, listen: false).showOverlayFromProvider(widget.data, context);
         },

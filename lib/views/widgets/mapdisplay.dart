@@ -14,7 +14,7 @@ class MapDisplay extends StatefulWidget {
 class _MapDisplayState extends State<MapDisplay> {
   final TransformationController _transformationController = TransformationController();
 
-  late AnimationController _animationController;
+  //! late AnimationController _animationController;
   //* late Animation<Matrix4> _mapAnimation;
 
   @override
@@ -55,7 +55,7 @@ class _MapDisplayState extends State<MapDisplay> {
 
   @override
   void dispose() {
-    _animationController.dispose();
+    //! _animationController.dispose();
     super.dispose();
   }
 
@@ -91,33 +91,31 @@ class _Floor1StackState extends State<Floor1Stack> {
               ),
 
               MapButton(
-                data: MapObjectData("red room", locationDescription: "located near the ____"),
+                data: MapObjectData("Room 1", locationDescription: "located near the ____"),
                 top: 50,
                 left: 50,
               ),
+              MapButton(
+                data: MapObjectData("Room 2", locationDescription: "located near the ____"),
+                top: 600,
+                left: 450,
+              ),
+              MapButton(
+                data: MapObjectData("Room 3", locationDescription: "located near the ____"),
+                top: 500,
+                left: 500,
+              ),
+              MapButton(
+                data: MapObjectData("Room 4", locationDescription: "located near the ____"),
+                top: 150,
+                left: 350,
+              ),
+              MapButton(
+                data: MapObjectData("Room 5", locationDescription: "located near the ____"),
+                top: 560,
+                left: 770,
+              ),
 
-              Positioned(
-                child: Icon(Icons.place, color: Colors.orange,),
-                top: 10,
-                right: 0,
-              ),
-              Positioned(
-                child: Icon(Icons.place, color: Colors.yellow,),
-                top: 10,
-                left: 10
-              ),
-              Positioned(
-                child: Icon(Icons.place, color: Colors.green,),
-                top: 30,
-              ),
-              Positioned(
-                child: Icon(Icons.place, color: Colors.blue,),
-        top:540
-              ),
-              Positioned(
-                child: Icon(Icons.place, color: Colors.purple,),
-        bottom: 540,
-              ),
             ],
           );
   }

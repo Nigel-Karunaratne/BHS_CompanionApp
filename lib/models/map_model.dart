@@ -5,14 +5,14 @@ import 'package:provider/provider.dart';
 
 class MapProvider extends ChangeNotifier {
   BuildContext? mapBuildContext;
-  int currentFloor = 0;
+  int currentFloor = 1;
 
   void showResultsBottomSheet(BuildContext context, MapObjectData data) {
     showBottomSheet(context: context, builder: (context) {
       return Container(
         height: 150.0,
         decoration: BoxDecoration(
-          color: Colors.blue,
+          color: Colors.red[900],
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20),
             topRight: Radius.circular(20)
