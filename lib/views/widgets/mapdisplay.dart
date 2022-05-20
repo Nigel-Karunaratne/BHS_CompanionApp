@@ -23,8 +23,8 @@ class _MapDisplayState extends State<MapDisplay> {
 
     return OverflowBox(
       child: InteractiveViewer(
-        maxScale: 5,
-        minScale: 1,
+        maxScale: 4.5,
+        minScale: 0.8,
         constrained: false,
         boundaryMargin: const EdgeInsets.all(0),
         clipBehavior: Clip.hardEdge,
