@@ -23,6 +23,7 @@ class _MapViewState extends State<MapView> {
         spacing: 5.0,
         children: [
           FloatingActionButton(
+            backgroundColor: Colors.red[800],
             elevation: 0,
             focusElevation: 0,
             hoverElevation: 0,
@@ -39,6 +40,7 @@ class _MapViewState extends State<MapView> {
             },
           ),
           FloatingActionButton(
+            backgroundColor: Colors.red[800],
             elevation: 0,
             focusElevation: 0,
             hoverElevation: 0,
