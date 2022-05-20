@@ -12,10 +12,10 @@ class MapDisplay extends StatefulWidget {
 }
 
 class _MapDisplayState extends State<MapDisplay> {
-  TransformationController _transformationController = TransformationController();
+  final TransformationController _transformationController = TransformationController();
 
   late AnimationController _animationController;
-  late Animation<Matrix4> _mapAnimation;
+  //* late Animation<Matrix4> _mapAnimation;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class _MapDisplayState extends State<MapDisplay> {
         transformationController: _transformationController,
       
         onInteractionUpdate: (details) {
-          double correctScaleValue = _transformationController.value.getMaxScaleOnAxis();
+          //* double correctScaleValue = _transformationController.value.getMaxScaleOnAxis();
           //* print(correctScaleValue);
         },
       

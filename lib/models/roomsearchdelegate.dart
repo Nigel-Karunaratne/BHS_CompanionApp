@@ -13,7 +13,7 @@ class RoomSearchDelegate extends SearchDelegate {
   ];
 
   RoomSearchDelegate() {
-    //Can change searchterms from here. Useful if needed to be pulled from a file.
+    //!* Can change searchterms from here. Useful if needed to be pulled from a file.
   }
 
 
@@ -24,7 +24,7 @@ class RoomSearchDelegate extends SearchDelegate {
         onPressed: () {
           query = '';
         },
-        icon: Icon(Icons.clear),
+        icon: const Icon(Icons.clear),
       )
     ];
   }
@@ -35,7 +35,7 @@ class RoomSearchDelegate extends SearchDelegate {
       onPressed: () {
         close(context, null);
       },
-      icon: Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back),
     );
   }
 
@@ -78,13 +78,8 @@ class RoomSearchDelegate extends SearchDelegate {
         return ListTile(
           title: Text(result),
           onTap: () {
-            //TODO: show bottom sheet here
-
             close(context, result);
-
             Provider.of<MapProvider>(context, listen: false).showResultsBottomSheet(Provider.of<MapProvider>(context, listen: false).mapBuildContext??context, MapObjectData("Data"));
-
-            
           },
         );
       },

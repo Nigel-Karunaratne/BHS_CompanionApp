@@ -57,7 +57,7 @@ class _MapViewState extends State<MapView> {
         ]
       ),
       appBar: AppBar(
-        title: Text("Map Page"),
+        title: Center(child: Text("BHS School Map")),
         actions: [
           IconButton(
             icon: Icon(Icons.search),
@@ -76,9 +76,9 @@ class _MapViewState extends State<MapView> {
         elevation: 0.0,
         currentIndex: 0,
 
-        backgroundColor: Colors.grey[900],
-        selectedItemColor: Colors.redAccent,
-        unselectedItemColor: Colors.grey[50],
+        backgroundColor: Colors.red,
+        selectedItemColor: Colors.grey[50],
+        unselectedItemColor: Colors.grey[500],
         selectedIconTheme: IconThemeData(color: Colors.redAccent),
         unselectedIconTheme: IconThemeData(color: Colors.grey[50]),
 
