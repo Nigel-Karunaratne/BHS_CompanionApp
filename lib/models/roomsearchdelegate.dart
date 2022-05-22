@@ -13,7 +13,8 @@ class RoomSearchDelegate extends SearchDelegate {
   ];
 
   RoomSearchDelegate() {
-    //!* Can change searchterms from here. Useful if needed to be pulled from a file.
+    //!* Can change searchterms from here (?). Useful if needed to be pulled from a file.
+    searchTerms = RoomData.dataMap.keys.toList(); //! Unoptimized?
   }
 
 
@@ -79,7 +80,7 @@ class RoomSearchDelegate extends SearchDelegate {
           title: Text(result),
           onTap: () {
             close(context, result);
-            Provider.of<MapProvider>(context, listen: false).showResultsBottomSheet(Provider.of<MapProvider>(context, listen: false).mapBuildContext??context, MapObjectData("Data"));
+            Provider.of<MapProvider>(context, listen: false).showResultsBottomSheet(Provider.of<MapProvider>(context, listen: false).mapBuildContext??context, RoomData.dataMap[matchQuery[index]]??MapObjectData("_error_02_"));
           },
         );
       },

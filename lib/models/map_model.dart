@@ -54,3 +54,15 @@ class MapObjectData {
   }
 
 }
+
+//* UNIVERSAL MAP OF ROOMS
+class RoomData {
+  static Map<String, MapObjectData> dataMap = {
+    // "": MapObjectData(""),
+    "R1": MapObjectData("Room 1"),
+    "R2": MapObjectData("Room 2"),
+    "R3": MapObjectData("Room 3"),
+    "R4": MapObjectData("Room 4"),
+    "R5": MapObjectData("Room 5"),
+  };
+}

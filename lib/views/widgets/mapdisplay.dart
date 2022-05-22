@@ -91,27 +91,27 @@ class _Floor1StackState extends State<Floor1Stack> {
               ),
 
               MapButton(
-                data: MapObjectData("Room 1", locationDescription: "located near the ____"),
+                id: "R1",
                 top: 50,
                 left: 50,
               ),
               MapButton(
-                data: MapObjectData("Room 2", locationDescription: "located near the ____"),
+                id: "R2",
                 top: 600,
                 left: 450,
               ),
               MapButton(
-                data: MapObjectData("Room 3", locationDescription: "located near the ____"),
+                id: "R3",
                 top: 500,
                 left: 500,
               ),
               MapButton(
-                data: MapObjectData("Room 4", locationDescription: "located near the ____"),
+                id: "R4",
                 top: 150,
                 left: 350,
               ),
               MapButton(
-                data: MapObjectData("Room 5", locationDescription: "located near the ____"),
+                id: "R5",
                 top: 560,
                 left: 770,
               ),
@@ -167,7 +167,7 @@ class _Floor2StackState extends State<Floor2Stack> {
               //   alignment: Alignment(1, 0),
               // ),
             
-              MapButton(data: MapObjectData("RedFloor2"), top: 100, left: 200),
+              MapButton(id: "R1", top: 100, left: 200),
               Positioned(
                 child: Icon(Icons.place, color: Colors.orange,),
                 top: 10,
