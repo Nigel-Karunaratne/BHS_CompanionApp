@@ -59,6 +59,7 @@ class _MapViewState extends State<MapView> {
         ]
       ),
       appBar: AppBar(
+        automaticallyImplyLeading: false, //* Makes back arrow not show up even when bottom sheet is being displayed.
         title: Center(child: Text("BHS School Map")),
         backgroundColor: Colors.red[800],
         elevation: 0,
