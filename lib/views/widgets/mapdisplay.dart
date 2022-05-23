@@ -20,7 +20,8 @@ class _MapDisplayState extends State<MapDisplay> {
   @override
   Widget build(BuildContext context) {
     Provider.of<MapProvider>(context, listen: false).mapBuildContext = context;
-
+    int currentFloor = Provider.of<MapProvider>(context).currentFloor;
+    bool showMarkers = Provider.of<MapProvider>(context).showMarkers;
     return OverflowBox(
       child: InteractiveViewer(
         maxScale: 4.5,
@@ -31,8 +32,8 @@ class _MapDisplayState extends State<MapDisplay> {
       
       
         child: GridPaper(
-          child: ( Provider.of<MapProvider>(context).currentFloor == 1 ? 
-            (Provider.of<MapProvider>(context).showMarkers ? Floor1StackIcon() : Floor1Stack()) : (Provider.of<MapProvider>(context).showMarkers ? Floor2StackIcon() : Floor2Stack()) 
+          child: (currentFloor == 1 ? 
+            (showMarkers ? Floor1StackIcon() : Floor1Stack()) : (showMarkers ? Floor2StackIcon() : Floor2Stack()) 
           ),
         ),
       
