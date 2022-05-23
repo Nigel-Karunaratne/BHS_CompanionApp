@@ -53,13 +53,13 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               Navigator.of(context).pushReplacementNamed("/map");
               break;
             case 1:
-              Navigator.of(context).pushReplacementNamed("/sched");
+              Navigator.of(context).pushReplacementNamed("/qr");
               break;
             case 2:
               Navigator.of(context).pushReplacementNamed("/helpful");
               break;
             case 3:
-              Navigator.of(context).pushReplacementNamed("/qr");
+              Navigator.of(context).pushReplacementNamed("/sched");
               break;
           }
         },
