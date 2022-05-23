@@ -2,6 +2,7 @@
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
+import 'package:bhs__companion__app/views/widgets/widgets_all.dart';
 
 class HelpfulLinksView extends StatefulWidget {
   const HelpfulLinksView({ Key? key }) : super(key: key);
@@ -15,11 +16,14 @@ class _HelpfulLinksState extends State<HelpfulLinksView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Helpful Links Page"),
+        title: Center(child: Text("Helpful Links for BHS Students")),
+        backgroundColor: Colors.red[800],
+        elevation: 0,
       ),
       body: Container(
         
       ),
+      bottomNavigationBar: CustomBottomNavBar(),
     );
   }
 }
