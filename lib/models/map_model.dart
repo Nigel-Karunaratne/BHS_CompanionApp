@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 class MapProvider extends ChangeNotifier {
   BuildContext? mapBuildContext;
   int currentFloor = 1;
+  bool showMarkers = true;
 
   void showResultsBottomSheet(BuildContext context, MapObjectData data) {
     showBottomSheet(context: context, builder: (context) {
@@ -41,6 +42,11 @@ class MapProvider extends ChangeNotifier {
   void showOverlayFromProvider(MapObjectData data, BuildContext context) {
     Provider.of<MapProvider>(context, listen: false).showResultsBottomSheet(context, data);
     //Navigator.pop(context); //! This will remove the BottomSheet from the view
+  }
+
+  void toggleShowIcons() {
+    showMarkers = !showMarkers;
+    notifyListeners();
   }
 }
 

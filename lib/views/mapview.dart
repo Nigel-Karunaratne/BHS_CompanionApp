@@ -56,6 +56,23 @@ class _MapViewState extends State<MapView> {
               Provider.of<MapProvider>(context, listen: false).changeFloor(1);
             },
           ),
+          FloatingActionButton(
+            backgroundColor: Colors.red[800],
+            elevation: 0,
+            focusElevation: 0,
+            hoverElevation: 0,
+            disabledElevation: 0,
+            highlightElevation: 0,
+            
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            mini: true,
+        
+            child: Icon(Icons.pin_drop),
+            heroTag: null,
+            onPressed: () {
+              Provider.of<MapProvider>(context, listen: false).toggleShowIcons();
+            },
+          ),
         ]
       ),
       appBar: AppBar(
@@ -72,7 +89,7 @@ class _MapViewState extends State<MapView> {
                 delegate: RoomSearchDelegate()
               );
             },
-          )
+          ),
         ],
       ),
       body: MapDisplay(),
