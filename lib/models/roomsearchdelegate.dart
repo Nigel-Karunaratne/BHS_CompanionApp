@@ -3,14 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class RoomSearchDelegate extends SearchDelegate {
-  List<String> searchTerms = [
-    "red",
-    "orange",
-    "yellow",
-    "green",
-    "blue",
-    "purple",
-  ];
+  List<String> searchTerms = [];
 
   RoomSearchDelegate() {
     //!* Can change searchterms from here (?). Useful if needed to be pulled from a file.
