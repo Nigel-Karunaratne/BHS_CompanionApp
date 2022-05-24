@@ -2,8 +2,9 @@
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:bhs__companion__app/models/map_model.dart';
-import 'package:flutter/material.dart';
+import 'package:bhs__companion__app/models/qrscanner_model.dart';
 
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
@@ -23,8 +24,11 @@ class MainApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<MapProvider>(
-          create: (context) => MapProvider()
+          create: (context) => MapProvider(),
         ),
+        ChangeNotifierProvider<QRScannerProvider>(
+          create: (context) => QRScannerProvider(),
+        )
       ],
       child: MaterialApp(
         title: 'MaterialApp/Title',
