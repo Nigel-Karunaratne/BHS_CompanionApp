@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'map_model.dart';
 
 class QRScannerProvider extends ChangeNotifier {
 
@@ -25,9 +26,14 @@ class QRScannerProvider extends ChangeNotifier {
     //If curly braces were found, remove them and try to search for the key in the dictionary (Map). (this needs to be implemented)
     if(found) {
       newVal = newVal.substring(1, newVal.length-1); //This removes the curly braces
+      MapObjectData? object = RoomData.dataMap[newVal];
+      if(object != null) {
+        //Map Marker Exists
+        Navigator.pushReplacementNamed(context, "/map");
+        Provider.of<MapProvider>(context, listen: false).showResultsBottomSheet(Provider.of<MapProvider>(context, listen: false).mapBuildContext??context, object);
+      }
     }
-
-
+    
 
     //! Debug: Show a popup box that contains the data
     showDialog(context: context, builder: (BuildContext context) => AlertDialog(
