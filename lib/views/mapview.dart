@@ -20,7 +20,7 @@ class _MapViewState extends State<MapView> {
     return Scaffold(
       floatingActionButton: Wrap(
         direction: Axis.vertical,
-        spacing: 5.0,
+        spacing: 4.0,
         children: [
           FloatingActionButton(
             backgroundColor: Colors.red[800],
@@ -54,6 +54,23 @@ class _MapViewState extends State<MapView> {
             heroTag: null,
             onPressed: () {
               Provider.of<MapProvider>(context, listen: false).changeFloor(1);
+            },
+          ),
+          FloatingActionButton(
+            backgroundColor: Colors.red[800],
+            elevation: 0,
+            focusElevation: 0,
+            hoverElevation: 0,
+            disabledElevation: 0,
+            highlightElevation: 0,
+            
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            mini: true,
+        
+            child: Text("B"),
+            heroTag: null,
+            onPressed: () {
+              Provider.of<MapProvider>(context, listen: false).changeFloor(0);
             },
           ),
           FloatingActionButton(
