@@ -45,7 +45,7 @@ class _MapDisplayState extends State<MapDisplay> {
                 case 2:
                   return Floor2Stack(showIcons: showMarkers);
                 default:
-                  return Floor1Stack(showIcons: showMarkers);
+                  return Floor1Stack(showIcons: false);
               }
             }),
         ),
