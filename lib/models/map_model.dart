@@ -7,6 +7,7 @@ class MapProvider extends ChangeNotifier {
   BuildContext? mapBuildContext;
   int currentFloor = 1;
   bool showMarkers = true;
+  MapObjectData? qrCodeData;
 
   void showResultsBottomSheet(BuildContext context, MapObjectData data) {
     showBottomSheet(context: context, builder: (context) {
@@ -86,6 +87,14 @@ class MapProvider extends ChangeNotifier {
   void toggleShowIcons() {
     showMarkers = !showMarkers;
     notifyListeners();
+  }
+
+  void qrToMap(BuildContext context, MapObjectData data) async {
+    qrCodeData = data;
+    Navigator.of(context).pushReplacementNamed("/map");
+    debugPrint("\n\n\nPushed.\n\n\n");
+    await Future.delayed(Duration(seconds: 1)); //Pretty sure this is safe.
+    showOverlayFromProvider(data, mapBuildContext??context);
   }
 }
 

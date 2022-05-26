@@ -29,8 +29,15 @@ class QRScannerProvider extends ChangeNotifier {
       MapObjectData? object = RoomData.dataMap[newVal];
       if(object != null) {
         //Map Marker Exists
-        Navigator.pushReplacementNamed(context, "/map");
-        Provider.of<MapProvider>(context, listen: false).showResultsBottomSheet(Provider.of<MapProvider>(context, listen: false).mapBuildContext??context, object);
+        debugPrint("Marker Found.");
+
+        //* Move to Map Screen
+        // Navigator.pushReplacementNamed(context, "/map", arguments: {"floor":2});
+        Provider.of<MapProvider>(context, listen: false).qrToMap(context, object);
+        // Provider.of<MapProvider>(context, listen: false).showOverlayFromProvider(object, context);
+      }
+      else {
+        debugPrint("NOT FOUND");
       }
     }
     

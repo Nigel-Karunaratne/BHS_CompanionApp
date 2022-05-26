@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class MapView extends StatefulWidget {
-  const MapView({ Key? key }) : super(key: key);
+  const MapView({ Key? key}) : super(key: key);
 
   @override
   State<MapView> createState() => _MapViewState();
@@ -17,6 +17,11 @@ class MapView extends StatefulWidget {
 class _MapViewState extends State<MapView> {
   @override
   Widget build(BuildContext context) {
+    // if (Provider.of<MapProvider>(context, listen: false).qrCodeData != null) {
+    //   Provider.of<MapProvider>(context, listen: false).showOverlayFromProvider(Provider.of<MapProvider>(context, listen: false).qrCodeData!, context);
+
+    // }
+
     return Scaffold(
       floatingActionButton: Wrap(
         direction: Axis.vertical,
