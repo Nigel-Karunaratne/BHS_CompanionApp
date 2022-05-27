@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class MapView extends StatefulWidget {
-  const MapView({ Key? key}) : super(key: key);
+  const MapView({Key? key}) : super(key: key);
 
   @override
   State<MapView> createState() => _MapViewState();
@@ -23,82 +23,83 @@ class _MapViewState extends State<MapView> {
     // }
 
     return Scaffold(
-      floatingActionButton: Wrap(
-        direction: Axis.vertical,
-        spacing: 4.0,
-        children: [
-          FloatingActionButton(
-            backgroundColor: Colors.red[800],
-            elevation: 0,
-            focusElevation: 0,
-            hoverElevation: 0,
-            disabledElevation: 0,
-            highlightElevation: 0,
-            
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            mini: true,
-        
-            child: Text("2"),
-            heroTag: null,
-            onPressed: () {
-              Provider.of<MapProvider>(context, listen: false).changeFloor(2);
-            },
-          ),
-          FloatingActionButton(
-            backgroundColor: Colors.red[800],
-            elevation: 0,
-            focusElevation: 0,
-            hoverElevation: 0,
-            disabledElevation: 0,
-            highlightElevation: 0,
-            
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            mini: true,
-        
-            child: Text("1"),
-            heroTag: null,
-            onPressed: () {
-              Provider.of<MapProvider>(context, listen: false).changeFloor(1);
-            },
-          ),
-          FloatingActionButton(
-            backgroundColor: Colors.red[800],
-            elevation: 0,
-            focusElevation: 0,
-            hoverElevation: 0,
-            disabledElevation: 0,
-            highlightElevation: 0,
-            
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            mini: true,
-        
-            child: Text("B"),
-            heroTag: null,
-            onPressed: () {
-              Provider.of<MapProvider>(context, listen: false).changeFloor(0);
-            },
-          ),
-          FloatingActionButton(
-            backgroundColor: Colors.red[800],
-            elevation: 0,
-            focusElevation: 0,
-            hoverElevation: 0,
-            disabledElevation: 0,
-            highlightElevation: 0,
-            
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            mini: true,
-        
-            child: Icon(Icons.pin_drop),
-            heroTag: null,
-            onPressed: () {
-              Provider.of<MapProvider>(context, listen: false).toggleShowIcons();
-            },
-          ),
-        ]
-      ),
+      // floatingActionButton: Wrap(
+      //   direction: Axis.vertical,
+      //   spacing: 4.0,
+      //   children: [
+      //     FloatingActionButton(
+      //       backgroundColor: Colors.red[800],
+      //       elevation: 0,
+      //       focusElevation: 0,
+      //       hoverElevation: 0,
+      //       disabledElevation: 0,
+      //       highlightElevation: 0,
+
+      //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      //       mini: true,
+
+      //       child: Text("2"),
+      //       heroTag: null,
+      //       onPressed: () {
+      //         Provider.of<MapProvider>(context, listen: false).changeFloor(2);
+      //       },
+      //     ),
+      //     FloatingActionButton(
+      //       backgroundColor: Colors.red[800],
+      //       elevation: 0,
+      //       focusElevation: 0,
+      //       hoverElevation: 0,
+      //       disabledElevation: 0,
+      //       highlightElevation: 0,
+
+      //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      //       mini: true,
+
+      //       child: Text("1"),
+      //       heroTag: null,
+      //       onPressed: () {
+      //         Provider.of<MapProvider>(context, listen: false).changeFloor(1);
+      //       },
+      //     ),
+      //     FloatingActionButton(
+      //       backgroundColor: Colors.red[800],
+      //       elevation: 0,
+      //       focusElevation: 0,
+      //       hoverElevation: 0,
+      //       disabledElevation: 0,
+      //       highlightElevation: 0,
+
+      //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      //       mini: true,
+
+      //       child: Text("B"),
+      //       heroTag: null,
+      //       onPressed: () {
+      //         Provider.of<MapProvider>(context, listen: false).changeFloor(0);
+      //       },
+      //     ),
+      //     FloatingActionButton(
+      //       backgroundColor: Colors.red[800],
+      //       elevation: 0,
+      //       focusElevation: 0,
+      //       hoverElevation: 0,
+      //       disabledElevation: 0,
+      //       highlightElevation: 0,
+
+      //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      //       mini: true,
+
+      //       child: Icon(Icons.pin_drop),
+      //       heroTag: null,
+      //       onPressed: () {
+      //         Provider.of<MapProvider>(context, listen: false).toggleShowIcons();
+      //       },
+      //     ),
+      //   ]
+      // ),
       appBar: AppBar(
-        automaticallyImplyLeading: false, //* Makes back arrow not show up even when bottom sheet is being displayed.
+        automaticallyImplyLeading:
+            false, //* Makes back arrow not show up even when bottom sheet is being displayed.
         title: Center(child: Text("BHS School Map")),
         backgroundColor: Colors.red[800],
         elevation: 0,
@@ -106,15 +107,88 @@ class _MapViewState extends State<MapView> {
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {
-              showSearch( //shows search bar?
-                context: context,
-                delegate: RoomSearchDelegate()
-              );
+              showSearch(
+                  //shows search bar?
+                  context: context,
+                  delegate: RoomSearchDelegate());
             },
           ),
         ],
       ),
-      body: MapDisplay(),
+      body: Stack(children: [
+        MapDisplay(),
+        Positioned(
+          bottom: 12,
+          right: 12,
+          child: Wrap(direction: Axis.vertical, spacing: 4.0, children: [
+            FloatingActionButton(
+              backgroundColor: Colors.red[800],
+              elevation: 0,
+              focusElevation: 0,
+              hoverElevation: 0,
+              disabledElevation: 0,
+              highlightElevation: 0,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              mini: true,
+              child: Text("2"),
+              heroTag: null,
+              onPressed: () {
+                Provider.of<MapProvider>(context, listen: false).changeFloor(2);
+              },
+            ),
+            FloatingActionButton(
+              backgroundColor: Colors.red[800],
+              elevation: 0,
+              focusElevation: 0,
+              hoverElevation: 0,
+              disabledElevation: 0,
+              highlightElevation: 0,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              mini: true,
+              child: Text("1"),
+              heroTag: null,
+              onPressed: () {
+                Provider.of<MapProvider>(context, listen: false).changeFloor(1);
+              },
+            ),
+            FloatingActionButton(
+              backgroundColor: Colors.red[800],
+              elevation: 0,
+              focusElevation: 0,
+              hoverElevation: 0,
+              disabledElevation: 0,
+              highlightElevation: 0,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              mini: true,
+              child: Text("B"),
+              heroTag: null,
+              onPressed: () {
+                Provider.of<MapProvider>(context, listen: false).changeFloor(0);
+              },
+            ),
+            FloatingActionButton(
+              backgroundColor: Colors.red[800],
+              elevation: 0,
+              focusElevation: 0,
+              hoverElevation: 0,
+              disabledElevation: 0,
+              highlightElevation: 0,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              mini: true,
+              child: Icon(Icons.pin_drop),
+              heroTag: null,
+              onPressed: () {
+                Provider.of<MapProvider>(context, listen: false)
+                    .toggleShowIcons();
+              },
+            ),
+          ]),
+        ),
+      ]),
       bottomNavigationBar: CustomBottomNavBar(),
     );
   }
