@@ -119,7 +119,7 @@ class _Floor1StackState extends State<Floor1Stack> {
       MapButton(id: "189", top: 200, left: 455),
       MapButton(id: "190", top: 200, left: 495),
       MapButton(id: "Fitness Center", top: 260, left: 460),
-      MapButton(id: "???", top: 245, left: 540), //office (idk if we need it)
+      // MapButton(id: "???", top: 245, left: 540), //office (idk if we need it)
 
       // * Light Purple (science)
       MapButton(id: "174", top: 320, left: 380),
@@ -139,7 +139,7 @@ class _Floor1StackState extends State<Floor1Stack> {
       MapButton(id: "170", top: 505, left: 490),
       MapButton(id: "169 / Lecture Hall", top: 500, left: 460),
       MapButton(id: "158", top: 500, left: 535),
-      MapButton(id: "???", top: 455, left: 490), //office (idk if we need it)
+      // MapButton(id: "???", top: 455, left: 490), //office (idk if we need it)
 
       // * Dark Blue (Music)
       MapButton(id: "191 / Chorus", top: 355, left: 640),
@@ -153,7 +153,7 @@ class _Floor1StackState extends State<Floor1Stack> {
       // * Red (Main Office)
       MapButton(id: "Nurse", top: 630, left: 710),
       MapButton(id: "Mail Room", top: 630, left: 790),
-      MapButton(id: "Main OFfice", top: 680, left: 665),
+      MapButton(id: "Main Office", top: 680, left: 665),
       MapButton(id: "Guidance Conference", top: 680, left: 750),
       MapButton(id: "Guidance", top: 680, left: 800),
 

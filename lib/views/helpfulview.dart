@@ -20,8 +20,11 @@ class _HelpfulLinksState extends State<HelpfulLinksView> {
         backgroundColor: Colors.red[800],
         elevation: 0,
       ),
-      body: Container(
-        
+      body: Center(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: Text("Here will be buttons that link students to useful websites such as Aspen, Google Classroom, Naviance, etc.", textAlign: TextAlign.center,)
+        )
       ),
       bottomNavigationBar: CustomBottomNavBar(),
     );
