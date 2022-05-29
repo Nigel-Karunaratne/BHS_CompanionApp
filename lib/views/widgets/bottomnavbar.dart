@@ -56,7 +56,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               Navigator.of(context).pushReplacementNamed("/qr");
               break;
             case 2:
-              Navigator.of(context).pushReplacementNamed("/helpful");
+              Navigator.of(context).pushReplacementNamed("/resources");
               break;
             case 3:
               Navigator.of(context).pushReplacementNamed("/sched");

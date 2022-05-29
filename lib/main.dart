@@ -40,7 +40,7 @@ class MainApp extends StatelessWidget {
         routes: {
           "/map": (context) => MapView(),
           "/sched": (context) => ScheduleView(),
-          "/helpful": (context) => HelpfulLinksView(),
+          "/resources": (context) => ResourcesView(),
           "/qr": (context) => QRScannerView(),
         },
         // home: MapView(),
@@ -53,7 +53,7 @@ class MainApp extends StatelessWidget {
           return PageRouteBuilder(pageBuilder: (_, __, ___) => ScheduleView(), transitionDuration: Duration.zero, reverseTransitionDuration: Duration.zero);
         }
         if (settings.name == '/helpful') {
-          return PageRouteBuilder(pageBuilder: (_, __, ___) => HelpfulLinksView(), transitionDuration: Duration.zero, reverseTransitionDuration: Duration.zero);
+          return PageRouteBuilder(pageBuilder: (_, __, ___) => ResourcesView(), transitionDuration: Duration.zero, reverseTransitionDuration: Duration.zero);
         }
         if (settings.name == '/qr') {
           return PageRouteBuilder(pageBuilder: (_, __, ___) => QRScannerView(), transitionDuration: Duration.zero, reverseTransitionDuration: Duration.zero);
