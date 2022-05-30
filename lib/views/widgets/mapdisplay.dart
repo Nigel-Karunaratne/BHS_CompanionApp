@@ -24,8 +24,8 @@ class _MapDisplayState extends State<MapDisplay> {
     bool showMarkers = Provider.of<MapProvider>(context).showMarkers;
     return OverflowBox(
       child: InteractiveViewer(
-        maxScale: 4.5,
-        minScale: 0.8,
+        maxScale: 3,
+        minScale: 0.5,
         constrained: false,
         boundaryMargin: const EdgeInsets.all(0),
         clipBehavior: Clip.hardEdge,
@@ -114,77 +114,76 @@ class _Floor1StackState extends State<Floor1Stack> {
         ),
       ),
       // * Dark Green (Health)
-      MapButton(id: "187", top: 200, left: 380),
-      MapButton(id: "188", top: 200, left: 415),
-      MapButton(id: "189", top: 200, left: 455),
-      MapButton(id: "190", top: 200, left: 495),
-      MapButton(id: "Fitness Center", top: 260, left: 460),
-      // MapButton(id: "???", top: 245, left: 540), //office (idk if we need it)
+      // MapButton(id: "154", top: 360, left: 660),
+      // MapButton(id: "152", top: 360, left: 720),
+      // MapButton(id: "Atheltic Director", top: 345, left: 780),
+      // MapButton(id: "150", top: 360, left: 850),
+      // MapButton(id: "Fitness Center", top: 470, left: 780),
+      // MapButton(id: "151", top: 430, left: 925),
 
       // * Light Purple (science)
-      MapButton(id: "174", top: 320, left: 380),
-      MapButton(id: "176", top: 320, left: 435),
-      MapButton(id: "177", top: 320, left: 480),
-      MapButton(id: "179", top: 320, left: 530),
-      MapButton(id: "165", top: 380, left: 375),
-      MapButton(id: "173", top: 380, left: 435),
-      MapButton(id: "172", top: 380, left: 480),
-      MapButton(id: "156", top: 380, left: 535),
-      MapButton(id: "164", top: 450, left: 375),
-      MapButton(id: "157", top: 450, left: 535),
-      MapButton(id: "163", top: 500, left: 375),
-      MapButton(id: "167", top: 480, left: 424),
-      MapButton(id: "168", top: 505, left: 424),
-      MapButton(id: "171", top: 480, left: 490),
-      MapButton(id: "170", top: 505, left: 490),
-      MapButton(id: "169 / Lecture Hall", top: 500, left: 460),
-      MapButton(id: "158", top: 500, left: 535),
-      // MapButton(id: "???", top: 455, left: 490), //office (idk if we need it)
+      // MapButton(id: "146", top: 560, left: 655),
+      // MapButton(id: "144", top: 560, left: 745),
+      // MapButton(id: "142", top: 560, left: 825),
+      // MapButton(id: "140", top: 560, left: 925),
+      // MapButton(id: "147", top: 660, left: 655),
+      // MapButton(id: "145", top: 660, left: 745),
+      // MapButton(id: "143", top: 660, left: 825),
+      // MapButton(id: "141", top: 660, left: 925),
+      // MapButton(id: "134", top: 785, left: 655),
+      // MapButton(id: "122", top: 785, left: 925),
+      // MapButton(id: "136", top: 860, left: 650),
+      // MapButton(id: "120", top: 860, left: 925),
+      // MapButton(id: "132", top: 830, left: 730),
+      // MapButton(id: "130", top: 880, left: 730),
+      // MapButton(id: "124", top: 830, left: 845),
+      // MapButton(id: "126", top: 880, left: 845),
+      // MapButton(id: "169 / Lecture Hall", top: 850, left: 790),
 
       // * Dark Blue (Music)
-      MapButton(id: "191 / Chorus", top: 355, left: 640),
-      MapButton(id: "192", top: 365, left: 688),
-      MapButton(id: "Band Room", top: 355, left: 745),
-      MapButton(id: "197 / Music Room", top: 405, left: 720),
-      MapButton(id: "Auditorium", top: 510, left: 725),
-      MapButton(id: "1SS", top: 405, left: 793), //! TODO: Figure out what room this is
-      MapButton(id: "155", top: 405, left: 813),
+      // MapButton(id: "161 / Chorus", top: 610, left: 1105),
+      // MapButton(id: "Band Room", top: 610, left: 1280),
+      // MapButton(id: "160", top: 700, left: 1210),
+      // MapButton(id: "162", top: 700, left: 1270),
+      // MapButton(id: "164", top: 700, left: 1380),
+      // MapButton(id: "Auditorium", top: 880, left: 1235),
 
       // * Red (Main Office)
-      MapButton(id: "Nurse", top: 630, left: 710),
-      MapButton(id: "Mail Room", top: 630, left: 790),
-      MapButton(id: "Main Office", top: 680, left: 665),
-      MapButton(id: "Guidance Conference", top: 680, left: 750),
-      MapButton(id: "Guidance", top: 680, left: 800),
+      // MapButton(id: "Nurse", top: 1080, left: 1235),
+      // MapButton(id: "Mail Room", top: 1080, left: 1360),
+      // MapButton(id: "Main Office", top: 1180, left: 1145),
+      // MapButton(id: "Guidance Conference", top: 1170, left: 1290),
+      // MapButton(id: "Guidance", top: 1170, left: 1380),
 
       // * Magenta (Cafeteria)
-      MapButton(id: "Cafeteria B", top: 790, left: 700),
-      MapButton(id: "Cafeteria A", top: 920, left: 680),
+      // MapButton(id: "Cafeteria B", top: 1350, left: 1210),
+      // MapButton(id: "Cafeteria A", top: 1580, left: 1180),
 
-      // * Orange (Foreign Languages?)
-      MapButton(id: "162", top: 548, left: 395),
-      MapButton(id: "161", top: 548, left: 440),
-      MapButton(id: "159", top: 548, left: 530),
-      MapButton(id: "137", top: 778, left: 390),
-      MapButton(id: "136", top: 778, left: 425),
-      MapButton(id: "134", top: 778, left: 530),
-      MapButton(id: "129", top: 830, left: 385),
-      MapButton(id: "128", top: 880, left: 385),
+      // * Orange (Foreign Languages)
+      // MapButton(id: "125", top: 940, left: 690),
+      // MapButton(id: "123", top: 940, left: 760),
+      // MapButton(id: "121", top: 940, left: 910),
+      // MapButton(id: "104", top: 1340, left: 670),
+      // MapButton(id: "102", top: 1340, left: 740),
+      // MapButton(id: "100", top: 1340, left: 910),
+      // MapButton(id: "109", top: 1430, left: 665),
+      // MapButton(id: "113", top: 1510, left: 665),
 
-      // * Yellow ()
-      MapButton(id: "130A", top: 820, left: 425),
-      MapButton(id: "130B", top: 845, left: 425),
-      MapButton(id: "133 / Bridge", top: 835, left: 462),
-      MapButton(id: "132", top: 820, left: 500),
-      MapButton(id: "132 B", top: 845, left: 500),
-      MapButton(id: "BCAT", top: 883, left: 423),
+      // * Yellow + Cyan ()
+      // MapButton(id: "107", top: 1410, left: 735),
+      // MapButton(id: "113", top: 1450, left: 735),
+      // MapButton(id: "101", top: 1410, left: 865),
+      // MapButton(id: "103", top: 1450, left: 865),
+      // MapButton(id: "105 / Bridge", top: 1430, left: 800),
+      // MapButton(id: "BCAT", top: 1515, left: 730),
+      // MapButton(id: "Area 123", top: 1610, left: 760),
 
       // * Light Green (Libary Area)
-      MapButton(id: "Lower Library", top: 610, left: 460),
-      MapButton(id: "Tech Offices", top: 660, left: 440),
-      MapButton(id: "Upper Library", top: 720, left: 460),
-      MapButton(id: "Writing Center", top: 590, left: 542),
-      MapButton(id: "Help Desk", top: 740, left: 374),
+      // MapButton(id: "Lower Library", top: 1040, left: 790),
+      // MapButton(id: "Tech Offices", top: 1140, left: 765),
+      // MapButton(id: "Upper Library", top: 1230, left: 790),
+      // MapButton(id: "Writing Center", top: 1010, left: 935),
+      // MapButton(id: "Help Desk", top: 1270, left: 650),
     ];
   }
 }
@@ -243,7 +242,7 @@ class _FloorBasementStackState extends State<FloorBasementStack> {
       children: widget.showIcons ? showLayoutWithIcons() : [
         Center(
           child: Image.asset(
-            "assets/img/map_floor2.png",
+            "assets/img/map_floorB.png",
           ),
         ),
       ],

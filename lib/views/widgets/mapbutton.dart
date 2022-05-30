@@ -23,7 +23,7 @@ class _MapButtonState extends State<MapButton> {
     return Positioned(
       child: IconButton(
         padding: EdgeInsets.zero,
-        icon: Icon(Icons.place, color: widget.iconColor??Colors.red,),
+        icon: Icon(Icons.place, color: widget.iconColor??Colors.red, size: 32.0,),
         onPressed: () {
           print("ID: ${widget.id}");
           Provider.of<MapProvider>(context, listen: false).showOverlayFromProvider(RoomData.dataMap[widget.id]??MapObjectData("_error_ (${widget.id})"), context);
