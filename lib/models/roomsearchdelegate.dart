@@ -73,7 +73,7 @@ class RoomSearchDelegate extends SearchDelegate {
           title: Text(result),
           onTap: () {
             close(context, result);
-            Provider.of<MapProvider>(context, listen: false).showResultsBottomSheet(Provider.of<MapProvider>(context, listen: false).mapBuildContext??context, RoomData.dataMap[matchQuery[index]]??MapObjectData("_error_02_"));
+            Provider.of<MapProvider>(context, listen: false).showResultsBottomSheet(Provider.of<MapProvider>(context, listen: false).mapBuildContext??context, RoomData.dataMap[matchQuery[index]]??MapObjectData("_error_02_", 1));
           },
         );
       },
