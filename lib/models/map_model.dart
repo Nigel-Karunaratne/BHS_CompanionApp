@@ -172,7 +172,7 @@ class RoomData {
     "113": MapObjectData("113", 1,),
 
     "107": MapObjectData("107", 1,),
-    "113": MapObjectData("113", 1,),
+    "111": MapObjectData("111", 1,),
     "101": MapObjectData("101", 1,),
     "103": MapObjectData("103", 1,),
     "105 / Bridge": MapObjectData("105 / Bridge", 1,),
