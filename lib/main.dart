@@ -3,6 +3,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:bhs__companion__app/models/map_model.dart';
 import 'package:bhs__companion__app/models/qrscanner_model.dart';
+import 'package:bhs__companion__app/models/resources_model.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -28,6 +29,9 @@ class MainApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<QRScannerProvider>(
           create: (context) => QRScannerProvider(),
+        ),
+        ChangeNotifierProvider<ResorcesProvider>(
+          create: (context) => ResorcesProvider(),
         )
       ],
       child: MaterialApp(
