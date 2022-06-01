@@ -15,7 +15,7 @@ class _MapDisplayState extends State<MapDisplay> {
   final TransformationController _transformationController = TransformationController();
   final bool showIcons = true;
   //! late AnimationController _animationController;
-  //* late Animation<Matrix4> _mapAnimation;
+  //* late Animation<Matrix4> _mapAnimation; //these are only for animating between 
 
   @override
   Widget build(BuildContext context) {
@@ -30,33 +30,25 @@ class _MapDisplayState extends State<MapDisplay> {
         boundaryMargin: const EdgeInsets.all(0),
         clipBehavior: Clip.hardEdge,
       
+        child: Builder(
+          builder: (context) {
+            switch(currentFloor) {
+              case 0:
+                return FloorLowerStack(showIcons: showMarkers);
+              case 1:
+                return Floor1Stack(showIcons: showMarkers);
+              case 2:
+                return Floor2Stack(showIcons: showMarkers);
+              default:
+                return Floor1Stack(showIcons: false);
+            }
+          }),
       
-        child: GridPaper(
-          // child: (currentFloor == 1 ? 
-          //   (showMarkers ? Floor1StackIcon() : Floor1Stack()) : (showMarkers ? Floor2StackIcon() : Floor2Stack()) 
-          // ),
-          child: Builder(
-            builder: (context) {
-              switch(currentFloor) {
-                case 0:
-                  return FloorLowerStack(showIcons: showMarkers);
-                case 1:
-                  return Floor1Stack(showIcons: showMarkers);
-                case 2:
-                  return Floor2Stack(showIcons: showMarkers);
-                default:
-                  return Floor1Stack(showIcons: false);
-              }
-            }),
-        ),
-      
-        transformationController: _transformationController,
-      
+        transformationController: _transformationController,  
         onInteractionUpdate: (details) {
           //* double correctScaleValue = _transformationController.value.getMaxScaleOnAxis();
           //* print(correctScaleValue);
-        },
-      
+        },   
         onInteractionEnd: (details) {
           
         },
@@ -66,6 +58,7 @@ class _MapDisplayState extends State<MapDisplay> {
 
   @override
   void initState() {
+    _transformationController.value.translate(-500.0,-400.0,0.0);
     super.initState();
   }
 
@@ -78,8 +71,6 @@ class _MapDisplayState extends State<MapDisplay> {
   void createAnimation() {
 
   }
-
-
 }
 
 class Floor1Stack extends StatefulWidget {

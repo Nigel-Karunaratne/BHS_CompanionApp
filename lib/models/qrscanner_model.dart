@@ -43,24 +43,25 @@ class QRScannerProvider extends ChangeNotifier {
     
 
     //! Debug: Show a popup box that contains the data
-    showDialog(context: context, builder: (BuildContext context) => AlertDialog(
-        title: const Text('Read Data'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(newVal),
-          ],
-        ),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            child: const Text('Close'),
-          ),
-        ],
-      )
-    );
+    // showDialog(context: context, builder: (BuildContext context) => AlertDialog(
+    //     title: const Text('Read Data'),
+    //     content: Column(
+    //       mainAxisSize: MainAxisSize.min,
+    //       crossAxisAlignment: CrossAxisAlignment.start,
+    //       children: <Widget>[
+    //         Text(newVal),
+    //       ],
+    //     ),
+    //     actions: <Widget>[
+    //       TextButton(
+    //         onPressed: () {
+    //           Navigator.of(context).pop();
+    //         },
+    //         child: const Text('Close'),
+    //       ),
+    //     ],
+    //   )
+    // );
+
   }
 }

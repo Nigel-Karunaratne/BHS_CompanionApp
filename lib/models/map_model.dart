@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 class MapProvider extends ChangeNotifier {
   BuildContext? mapBuildContext;
   int currentFloor = 1;
-  bool showMarkers = true;
+  bool showMarkers = false;
   MapObjectData? qrCodeData;
 
   void showResultsBottomSheet(BuildContext context, MapObjectData data) {
