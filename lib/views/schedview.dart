@@ -1,6 +1,3 @@
-//! Only here for development purposes: remove when buildng release app
-// ignore_for_file: prefer_const_constructors
-// ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:bhs__companion__app/views/widgets/widgets_all.dart';
 
@@ -16,12 +13,15 @@ class _ScheduleViewState extends State<ScheduleView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Schedule View")),
+        title: const Center(child: Text("Schedule View")),
         backgroundColor: Colors.red[800],
         elevation: 0,
       ),
-      body: Container(
-        
+      body: const Center(
+        child: Padding(
+          padding: EdgeInsets.all(5.0),
+          child: Text("Nothing to see here :("),
+        ),
       ),
       bottomNavigationBar: CustomBottomNavBar(),
     );

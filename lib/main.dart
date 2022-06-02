@@ -43,7 +43,7 @@ class MainApp extends StatelessWidget {
         initialRoute: "/map",
         routes: {
           "/map": (context) => MapView(),
-          "/sched": (context) => ScheduleView(),
+          // "/sched": (context) => ScheduleView(), //* Deprecated feature as of now, we didn't know how to effectively implement it.
           "/resources": (context) => ResourcesView(),
           "/qr": (context) => QRScannerView(),
         },

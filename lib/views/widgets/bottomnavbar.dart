@@ -18,7 +18,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
         backgroundColor: Colors.red[800],
         selectedItemColor: Colors.grey[50],
         unselectedItemColor: Colors.grey[500],
-        selectedIconTheme: IconThemeData(color: Colors.white),
+        selectedIconTheme: const IconThemeData(color: Colors.white),
         unselectedIconTheme: IconThemeData(color: Colors.grey[50]),
 
         selectedFontSize: 0,
@@ -29,21 +29,22 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
         
         items: [
           BottomNavigationBarItem(
-            icon: Image.asset("assets/icons/bn_map.png", scale: 3,),
-            label: "Map"
-          ),
-          BottomNavigationBarItem(
             icon: Image.asset("assets/icons/bn_camera.png", scale: 3,),
             label: "QR Scanner"
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset("assets/icons/bn_map.png", scale: 3,),
+            label: "Map"
           ),
           BottomNavigationBarItem(
             icon: Image.asset("assets/icons/bn_questionmark.png", scale: 3,),
             label: "Helpful Links"
           ),
-          BottomNavigationBarItem(
-            icon: Image.asset("assets/icons/bn_3dots.png", scale: 3,),
-            label: "Schedule"
-          ),
+          //* THIS IS FOR A CUT FEATURE
+          // BottomNavigationBarItem(
+          //   icon: Image.asset("assets/icons/bn_3dots.png", scale: 3,),
+          //   label: "Schedule"
+          // ),
         ],
       
         onTap: (index) {
