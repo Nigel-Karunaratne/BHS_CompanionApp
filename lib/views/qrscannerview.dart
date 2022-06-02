@@ -3,7 +3,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 import 'dart:io' show Platform;
 import 'package:bhs__companion__app/models/qrscanner_model.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
+// import 'package:flutter/foundation.dart' show kIsWeb;
 
 import 'package:bhs__companion__app/views/widgets/widgets_all.dart';
 import 'package:flutter/material.dart';
