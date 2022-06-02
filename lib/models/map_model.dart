@@ -25,16 +25,30 @@ class MapProvider extends ChangeNotifier {
               topRight: Radius.circular(20)
             ),
           ),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              // crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(data.roomNumber, textScaleFactor: 2,
-                  style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
-                Text(data.locationDescription ?? "", style: TextStyle(color: Colors.white,)),
-              ] 
-            ),
+          child: Stack(
+            children: [
+              Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(data.roomNumber, textScaleFactor: 2,
+                      style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+                    Text(data.locationDescription ?? "", style: TextStyle(color: Colors.white,)),
+                  ] 
+                ),
+              ),
+              Positioned(
+                top: 10,
+                left: 10,
+                child: IconButton(
+                  icon: Icon(Icons.cancel_outlined, color: Colors.white,),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ),
+            ],
           ),
         );
       }
@@ -48,29 +62,44 @@ class MapProvider extends ChangeNotifier {
               topRight: Radius.circular(20)
             ),
           ),
-          child: Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    // crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(data.roomNumber, textScaleFactor: 2,
-                        style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
-                      Text(data.locationDescription ?? "", style: TextStyle(color: Colors.white,)),
-                    ] 
-                  ),
+          child: Stack(
+            children: [
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(data.roomNumber, textScaleFactor: 2,
+                            style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+                          Text(data.locationDescription ?? "", style: TextStyle(color: Colors.white,)),
+                        ] 
+                      ),
+                    ),
+                    VerticalDivider(width: 10,),
+                    Expanded(
+                      child: Center(
+                        child: Text(data.roomDescription!, style: TextStyle(color: Colors.white,),)
+                      )
+                    ),
+                  ],
                 ),
-                VerticalDivider(width: 10,),
-                Expanded(
-                  child: Center(
-                    child: Text(data.roomDescription!, style: TextStyle(color: Colors.white,),)
-                  )
+              ),
+              Positioned(
+                top: 10,
+                left: 10,
+                child: IconButton(
+                  icon: Icon(Icons.cancel_outlined, color: Colors.white,),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
                 ),
-              ],
-            ),
+              ),
+            ],
+            
           ),
         );
       }
