@@ -18,24 +18,14 @@ class QRScannerView extends StatefulWidget {
 }
 
 class _QRScannerViewState extends State<QRScannerView> {
-  MobileScannerController cameraController = MobileScannerController();
+  MobileScannerController? cameraController;  //= MobileScannerController();
   Barcode? readBarcode;
 
   @override
   Widget build(BuildContext context) {
-    if (kIsWeb || !(Platform.isAndroid || Platform.isIOS)) {
-      return Scaffold(
-        appBar: AppBar(
-          title: Center(child: Text("QR Scanner")),
-          backgroundColor: Colors.red[800],
-          elevation: 0,
-        ),
-        bottomNavigationBar: CustomBottomNavBar(),
-        body: Center(child: Text("Scanning QR Codes is not supported on this platform!\nThis feature is only supported on Android and IOS."),),
-      );
-
-    }
-    else { //platform is either ios or android
+    // For some reason, the kIsWeb bool throws an error on Windows. 
+    if (Platform.isAndroid || Platform.isIOS) {
+      cameraController = MobileScannerController();
       return Scaffold(
         appBar: AppBar(
           title: Center(child: Text("QR Scanner")),
@@ -93,7 +83,7 @@ class _QRScannerViewState extends State<QRScannerView> {
                     IconButton(
                       color: Colors.white,
                       icon: ValueListenableBuilder(
-                        valueListenable: cameraController.torchState,
+                        valueListenable: cameraController!.torchState,
                         builder: (context, state, child) {
                           switch (state as TorchState) {
                             case TorchState.off:
@@ -104,12 +94,12 @@ class _QRScannerViewState extends State<QRScannerView> {
                         },
                       ),
                       iconSize: 32.0,
-                      onPressed: () => cameraController.toggleTorch(),
+                      onPressed: () => cameraController!.toggleTorch(),
                     ),
                     IconButton(
                       color: Colors.white,
                       icon: ValueListenableBuilder(
-                        valueListenable: cameraController.cameraFacingState,
+                        valueListenable: cameraController!.cameraFacingState,
                         builder: (context, state, child) {
                           switch (state as CameraFacing) {
                             case CameraFacing.front:
@@ -120,7 +110,7 @@ class _QRScannerViewState extends State<QRScannerView> {
                         },
                       ),
                       iconSize: 32.0,
-                      onPressed: () => cameraController.switchCamera(),
+                      onPressed: () => cameraController!.switchCamera(),
                     ),
                           
                   ],
@@ -129,6 +119,17 @@ class _QRScannerViewState extends State<QRScannerView> {
             )
           ],
         ),
+      );
+    }
+    else { //platform is either ios or android
+      return Scaffold(
+        appBar: AppBar(
+          title: Center(child: Text("QR Scanner")),
+          backgroundColor: Colors.red[800],
+          elevation: 0,
+        ),
+        bottomNavigationBar: CustomBottomNavBar(),
+        body: Center(child: Text("Scanning QR Codes is not supported on this platform!\nThis feature is only supported on Android and IOS."),),
       );
     }
   }
