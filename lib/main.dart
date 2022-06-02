@@ -30,8 +30,8 @@ class MainApp extends StatelessWidget {
         ChangeNotifierProvider<QRScannerProvider>(
           create: (context) => QRScannerProvider(),
         ),
-        ChangeNotifierProvider<ResorcesProvider>(
-          create: (context) => ResorcesProvider(),
+        ChangeNotifierProvider<ResourcesProvider>(
+          create: (context) => ResourcesProvider(),
         )
       ],
       child: MaterialApp(
