@@ -51,10 +51,10 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           //TODO: Abtract this into a provider?
           switch (index) {
             case 0:
-              Navigator.of(context).pushReplacementNamed("/map");
+              Navigator.of(context).pushReplacementNamed("/qr");
               break;
             case 1:
-              Navigator.of(context).pushReplacementNamed("/qr");
+              Navigator.of(context).pushReplacementNamed("/map");
               break;
             case 2:
               Navigator.of(context).pushReplacementNamed("/resources");
