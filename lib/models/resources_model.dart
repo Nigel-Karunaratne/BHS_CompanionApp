@@ -10,7 +10,7 @@ class ResourcesProvider extends ChangeNotifier {
   void openBhsLibraryWebsite() => openUrl(Uri.parse("https://sites.google.com/bpsk12.org/bhs-library/home"));
 
   void openUrl(Uri path) async {
-    if (!await launchUrl(path)) {
+    if (!await launchUrl(path, mode: LaunchMode.externalApplication)) {
       throw 'Could not launch $path';
     }
   }
