@@ -23,7 +23,7 @@ class _ScheduleViewState extends State<ScheduleView> {
           child: Text("Nothing to see here :("),
         ),
       ),
-      bottomNavigationBar: CustomBottomNavBar(),
+      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }
