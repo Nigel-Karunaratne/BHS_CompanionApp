@@ -21,6 +21,15 @@ class _ResourcesViewState extends State<ResourcesView> {
         title: Center(child: Text("Helpful Links for BHS Students")),
         backgroundColor: Colors.red[800],
         elevation: 0,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.help_outline_sharp),
+            color: Colors.white,
+            onPressed: () {
+              Provider.of<ResourcesProvider>(context, listen: false).showAboutView(context);
+            },
+          ),
+        ],
       ),
       body: Center(
         child: ListView(

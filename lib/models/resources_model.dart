@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:bhs__companion__app/views/views_all.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ResourcesProvider extends ChangeNotifier {
@@ -13,5 +14,14 @@ class ResourcesProvider extends ChangeNotifier {
     if (!await launchUrl(path, mode: LaunchMode.externalApplication)) {
       throw 'Could not launch $path';
     }
+  }
+
+  void showAboutView(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const AboutView(),
+      )
+    );
   }
 }
